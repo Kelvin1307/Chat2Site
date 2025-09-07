@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ business_name }}</title>
+    <meta name="description" content="{{ one_liner_value }}">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <header style="background-color: {{ brand.primary_color_hex }}">
+        <h1>{{ business_name }}</h1>
+        <p>{{ short_tagline }}</p>
+    </header>
+
+    <section>
+        <h2>Our Services</h2>
+        <ul>
+            {% for service in services_or_products %}
+                <li>{{ service }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <footer>
+        <p>📍 {{ primary_location_city }} | 📞 {{ contact.phone }} | ✉️ {{ contact.email }}</p>
+    </footer>
+</body>
+</html>
